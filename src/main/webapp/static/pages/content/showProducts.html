@@ -1,0 +1,16 @@
+
+<div id="productList" align="center" ng-controller="angular.shoppingcart.item.list.controller">
+	<div id="errMessage" align="center" style="display:none">
+	</div>
+	<div id="productDiv" align="center" ng-show="showProducts">
+		<div class="row" ng-repeat="productRow in chunkedProductDataList">
+			<div class="col-md-4" ng-repeat="product in productRow">
+			    <a href="" ng-click="viewProductDetails(product.upc)" class="thumbnail"> 
+			      <img ng-src="/images/products/{{product.upc}}/image.jpg" alt="{{product.title}}" style="width:150px;height:150px">
+			      <p>{{product.title}}</p>
+			    </a>
+			</div>
+		</div>
+	</div>
+	
+</div>

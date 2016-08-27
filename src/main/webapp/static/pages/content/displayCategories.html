@@ -1,0 +1,27 @@
+<div id="categoryDiv" align="center" ng-controller="angular.shoppingcart.category.controller">
+
+	<div ng-show="message">
+		<span class="label label-info">{{message}}</span>
+	</div>
+	
+	<table>
+		<tr>
+			<td><h4>Category</h4></td>
+			<td>
+				<select id="categorySelect" ng-model="categoryId">						
+						<option ng-repeat="category in categoryList" id="{{category.categoryId}}" 
+									 label="{{category.categoryName}}" 
+									 value="{{category.categoryId}}"/>
+				</select>
+			</td>
+			<td><button value="GO" class="btn btn-primary" ng-click="showProducts()">GO</button></td>
+		</tr>
+	</table>
+</div>
+
+<div id="blankDiv" class="col-md-10">
+&nbsp;
+</div>
+
+<div ng-include="'/shopping-cart-angular-cassandra/static/pages/content/showProducts.html'"></div>
+	
